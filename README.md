@@ -1,6 +1,14 @@
 # Fastfetch Star Lore
 
-Colorful, lore-inspired ASCII artwork for [Fastfetch](https://github.com/fastfetch-cli/fastfetch). It is made for Kitty and other modern terminals, but contains no image assets or terminal-specific graphics protocol: the art is portable ANSI text.
+Colorful, lore-inspired artwork for [Fastfetch](https://github.com/fastfetch-cli/fastfetch). Stargate uses native full-color pixel sprites in Kitty and falls back to portable ANSI art elsewhere.
+
+## Stargate gallery
+
+| Active Stargate | Zero Point Module | MALP |
+| --- | --- | --- |
+| ![Active Stargate](art/stargate/images/active-stargate.png) | ![Zero Point Module](art/stargate/images/zpm.png) | ![MALP](art/stargate/images/malp.png) |
+
+The Stargate pixel sprites are original AI-generated artwork, created with OpenAI image generation and included as repository assets. They are lore-inspired designs, not converted show screenshots, promotional images, or copied artwork.
 
 ## Franchises
 
@@ -60,7 +68,7 @@ STAR_TREK_ART_INDEX=3 fastfetch-star-lore star-trek
 
 ## Add a franchise
 
-Put its renderer at `art/<category>/art.zsh`, add the category to `bin/fastfetch-star-lore`, and document it in the table above. The renderer writes ANSI art to standard output; the launcher supplies it to Fastfetch as a `file-raw` logo.
+Put its renderer at `art/<category>/art.zsh`, add the category to `bin/fastfetch-star-lore`, and document it in the table above. ANSI renderers write to standard output; Kitty sprite categories can instead select an image asset for Fastfetch's native Kitty logo mode.
 
 ## License
 
