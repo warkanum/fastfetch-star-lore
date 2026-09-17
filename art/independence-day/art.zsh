@@ -22,7 +22,7 @@ case ${INDEPENDENCE_DAY_ART_INDEX:-$((RANDOM % 3))} in
     "${violet}    /    .-' ${cyan} /_\\ ${violet} '-.    \\${reset}" \
     "${violet}   |___/_____${cyan}/___\\${violet}_____\\___|${reset}" \
     "${cyan}          ALIEN INTERCEPTOR${reset}" \
-    "${gold}       \"Welcome to Earth.\"${reset}" ;;
+    "${gold}       \"Welcome to Earth!\"${reset}" ;;
   2) printf '%s\n' \
     "${dim}             .-''''-.${reset}" \
     "${violet}           .'  ${cyan}o    o${violet}  '.${reset}" \

@@ -38,7 +38,7 @@ All full-color pixel sprites are original AI-generated artwork, created with Ope
 | --- | --- | --- |
 | `stargate` | Available | Full-color Kitty sprites: active Stargate, DHD, ZPM, Goa'uld hand device, staff weapon, Ancient chair, MALP, Atlantis City, Atlantis Gate, Puddle Jumper, Universe Gate, Destiny, and Al'kesh |
 | `star-trek` | Available | ANSI art: communicator, tricorder, phaser, warp core, Borg cube, PADD, and bat'leth. Kitty sprites: Federation-inspired starship, Klingon-inspired bird-of-prey, Vulcan science vessel, tricorder, transporter, and Vulcan salute |
-| `independence-day` | Available | Full-color Kitty sprites: city-scale mothership, alien interceptor, and extraterrestrial ambassador. ANSI art includes brief movie-quote references |
+| `independence-day` | Available | Full-color Kitty sprites: city-scale mothership, alien interceptor, and extraterrestrial ambassador, each with user-supplied quote captions. ANSI art includes brief movie-quote references |
 | `star-wars` | Planned | Reserved for future artwork |
 
 ## Install

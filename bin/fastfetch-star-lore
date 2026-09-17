@@ -65,7 +65,7 @@ case $category in
   independence-day)
     if [[ "${TERM:-}" == xterm-kitty* && "${renderer_mode:-sprite}" == sprite ]]; then
       sprite=$(zsh "$art_dir/independence-day/select-sprite.zsh")
-      exec fastfetch "${config[@]}" --kitty "$sprite" --logo-width 38 --logo-height 18
+      exec fastfetch "${config[@]}" --kitty "$sprite" --logo-width 46 --logo-height 28
     fi
     renderer="$art_dir/independence-day/art.zsh"
     ;;
