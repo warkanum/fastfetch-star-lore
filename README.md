@@ -1,6 +1,6 @@
 # Fastfetch Star Lore
 
-Colorful, lore-inspired artwork for [Fastfetch](https://github.com/fastfetch-cli/fastfetch). Stargate uses native full-color pixel sprites in Kitty and falls back to portable ANSI art elsewhere.
+Colorful, lore-inspired artwork for [Fastfetch](https://github.com/fastfetch-cli/fastfetch). Stargate and Star Trek use native full-color pixel sprites in Kitty and fall back to portable ANSI art elsewhere.
 
 ## Stargate gallery
 
@@ -12,14 +12,24 @@ These are the actual full-color Kitty sprite assets included in the package.
   <img src="art/stargate/images/puddle-jumper.png" alt="Puddle Jumper" width="31%" />
 </p>
 
-The Stargate pixel sprites are original AI-generated artwork, created with OpenAI image generation and included as repository assets. They are lore-inspired designs, not converted show screenshots, promotional images, or copied artwork.
+## Star Trek gallery
+
+These are representative native Kitty sprite assets; the rotation includes more.
+
+<p align="center">
+  <img src="art/star-trek/images/federation-starship.png" alt="Federation-inspired starship" width="31%" />
+  <img src="art/star-trek/images/klingon-bird-of-prey.png" alt="Klingon-inspired bird-of-prey" width="31%" />
+  <img src="art/star-trek/images/transporter.png" alt="Transporter platform" width="31%" />
+</p>
+
+All full-color pixel sprites are original AI-generated artwork, created with OpenAI image generation and included as repository assets. They are lore-inspired designs, not converted show screenshots, promotional images, or copied artwork.
 
 ## Franchises
 
 | Category | Status | Contents |
 | --- | --- | --- |
 | `stargate` | Available | Full-color Kitty sprites: active Stargate, DHD, ZPM, Goa'uld hand device, staff weapon, Ancient chair, MALP, Atlantis City, Atlantis Gate, Puddle Jumper, Universe Gate, Destiny, and Al'kesh |
-| `star-trek` | Available | Communicator, tricorder, phaser, warp core, Borg cube, PADD, and bat'leth |
+| `star-trek` | Available | ANSI art: communicator, tricorder, phaser, warp core, Borg cube, PADD, and bat'leth. Kitty sprites: Federation-inspired starship, Klingon-inspired bird-of-prey, Vulcan science vessel, tricorder, transporter, and Vulcan salute |
 | `star-wars` | Planned | Reserved for future artwork |
 
 ## Install
@@ -64,11 +74,13 @@ STARGATE_SPRITE_INDEX=2 fastfetch-star-lore stargate
 
 In another terminal emulator, it falls back to ANSI art. Set `STAR_LORE_RENDERER=raw` to use that fallback in Kitty too.
 
-Star Trek uses the equivalent `STAR_TREK_ART_INDEX` variable:
+In Kitty, Star Trek randomly selects a full-color sprite. Pin one with `STAR_TREK_SPRITE_INDEX` from `1` through `6` (the Federation-inspired starship is `1`):
 
 ```sh
-STAR_TREK_ART_INDEX=3 fastfetch-star-lore star-trek
+STAR_TREK_SPRITE_INDEX=3 fastfetch-star-lore star-trek
 ```
+
+Outside Kitty, Star Trek uses its ANSI-art rotation, which can be pinned with `STAR_TREK_ART_INDEX`.
 
 ## Add a franchise
 

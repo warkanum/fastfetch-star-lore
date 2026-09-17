@@ -48,7 +48,13 @@ case $category in
     fi
     renderer="$art_dir/stargate/art.zsh"
     ;;
-  star-trek) renderer="$art_dir/star-trek/art.zsh" ;;
+  star-trek)
+    if [[ "${TERM:-}" == xterm-kitty* && "${renderer_mode:-sprite}" == sprite ]]; then
+      sprite=$(zsh "$art_dir/star-trek/select-sprite.zsh")
+      exec fastfetch "${config[@]}" --kitty "$sprite" --logo-width 38 --logo-height 18
+    fi
+    renderer="$art_dir/star-trek/art.zsh"
+    ;;
   star-wars)
     printf 'The %s category is reserved but has no art yet.\n' "$category" >&2
     exit 1
