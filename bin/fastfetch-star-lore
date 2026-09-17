@@ -3,7 +3,7 @@ set -euo pipefail
 
 usage() {
   printf 'Usage: %s <category> [--config <fastfetch-config>]\n' "${0##*/}"
-  printf 'Available categories: stargate, star-trek, random (or all)\n'
+  printf 'Available categories: stargate, star-trek, independence-day, random (or all)\n'
 }
 
 category=${1:-stargate}
@@ -40,7 +40,7 @@ art_dir=$(cd -- "$script_dir/../art" && pwd)
 
 case $category in
   random|all)
-    categories=(stargate star-trek)
+    categories=(stargate star-trek independence-day)
     category=${categories[RANDOM % ${#categories[@]}]}
     ;;
 esac
@@ -61,6 +61,13 @@ case $category in
       exec fastfetch "${config[@]}" --kitty "$sprite" --logo-width 38 --logo-height 18
     fi
     renderer="$art_dir/star-trek/art.zsh"
+    ;;
+  independence-day)
+    if [[ "${TERM:-}" == xterm-kitty* && "${renderer_mode:-sprite}" == sprite ]]; then
+      sprite=$(zsh "$art_dir/independence-day/select-sprite.zsh")
+      exec fastfetch "${config[@]}" --kitty "$sprite" --logo-width 38 --logo-height 18
+    fi
+    renderer="$art_dir/independence-day/art.zsh"
     ;;
   star-wars)
     printf 'The %s category is reserved but has no art yet.\n' "$category" >&2
