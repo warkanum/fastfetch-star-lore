@@ -3,7 +3,7 @@ set -euo pipefail
 
 usage() {
   printf 'Usage: %s <category> [--config <fastfetch-config>]\n' "${0##*/}"
-  printf 'Available categories: stargate, star-trek\n'
+  printf 'Available categories: stargate, star-trek, random (or all)\n'
 }
 
 category=${1:-stargate}
@@ -37,6 +37,13 @@ esac
 script_path=$(readlink -f -- "${BASH_SOURCE[0]}")
 script_dir=$(cd -- "$(dirname -- "$script_path")" && pwd)
 art_dir=$(cd -- "$script_dir/../art" && pwd)
+
+case $category in
+  random|all)
+    categories=(stargate star-trek)
+    category=${categories[RANDOM % ${#categories[@]}]}
+    ;;
+esac
 
 case $category in
   stargate)

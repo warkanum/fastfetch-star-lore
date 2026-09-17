@@ -60,6 +60,14 @@ Run a category manually:
 fastfetch-star-lore stargate
 ```
 
+Randomly choose from every available category:
+
+```sh
+fastfetch-star-lore random
+```
+
+`all` is an alias for `random`. This chooses a franchise first, then its normal artwork rotation chooses a sprite (or ANSI design).
+
 By default Fastfetch uses its normal configuration. To use a specific Fastfetch configuration:
 
 ```sh
