@@ -65,7 +65,18 @@ case $category in
   independence-day)
     if [[ "${TERM:-}" == xterm-kitty* && "${renderer_mode:-sprite}" == sprite ]]; then
       sprite=$(zsh "$art_dir/independence-day/select-sprite.zsh")
-      exec fastfetch "${config[@]}" --kitty "$sprite" --logo-width 46 --logo-height 28
+      # Match the compact Kitty cell budget used by the working Stargate path.
+      case ${sprite##*/} in
+        mothership.png) quote='"We will not go quietly into the night."' ;;
+        interceptor.png) quote='"Welcome to Earth!"' ;;
+        alien-ambassador.png) quote='"Today, we celebrate our Independence Day!"' ;;
+        city-beam.png) quote='"We are still here."' ;;
+        resistance-interceptor.png) quote='"Today, we fight together."' ;;
+        signal-beacon.png) quote='"The signal is ours now."' ;;
+      esac
+      fastfetch "${config[@]}" --kitty "$sprite" --logo-width 38 --logo-height 18
+      printf '\n%s\n' "$quote"
+      exit 0
     fi
     renderer="$art_dir/independence-day/art.zsh"
     ;;

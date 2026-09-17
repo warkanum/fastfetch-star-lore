@@ -6,6 +6,9 @@ local -a sprites=(
   mothership.png
   interceptor.png
   alien-ambassador.png
+  city-beam.png
+  resistance-interceptor.png
+  signal-beacon.png
 )
 
 local index=${INDEPENDENCE_DAY_SPRITE_INDEX:-$((RANDOM % ${#sprites[@]} + 1))}
