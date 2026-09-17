@@ -6,7 +6,7 @@ Colorful, lore-inspired ASCII artwork for [Fastfetch](https://github.com/fastfet
 
 | Category | Status | Contents |
 | --- | --- | --- |
-| `stargate` | Available | Full-color Kitty sprites: DHD, ZPM, Goa'uld hand device, staff weapon, Ancient chair, and MALP |
+| `stargate` | Available | Full-color Kitty sprites: active Stargate, DHD, ZPM, Goa'uld hand device, staff weapon, Ancient chair, and MALP |
 | `star-trek` | Available | Communicator, tricorder, phaser, warp core, Borg cube, PADD, and bat'leth |
 | `star-wars` | Planned | Reserved for future artwork |
 
@@ -44,7 +44,7 @@ By default Fastfetch uses its normal configuration. To use a specific Fastfetch 
 fastfetch-star-lore stargate --config ~/.config/fastfetch/config-pokemon.jsonc
 ```
 
-In Kitty, Stargate uses native full-color pixel-art sprites and changes on each invocation. Pin one with `STARGATE_SPRITE_INDEX` from `1` through `6`:
+In Kitty, Stargate uses native full-color pixel-art sprites and changes on each invocation. Pin one with `STARGATE_SPRITE_INDEX` from `1` through `7` (the active Stargate is `1`):
 
 ```sh
 STARGATE_SPRITE_INDEX=2 fastfetch-star-lore stargate

@@ -3,6 +3,7 @@
 
 local script_dir=${0:A:h}
 local -a sprites=(
+  active-stargate.png
   dhd.png
   zpm.png
   hand-device.png
