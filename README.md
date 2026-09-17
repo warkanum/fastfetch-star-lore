@@ -39,18 +39,18 @@ Fastfetch and Zsh are required. Clone the repository, then install it:
 ```sh
 git clone git@github.com:warkanum/fastfetch-star-lore.git
 cd fastfetch-star-lore
-./install.sh
+./install.sh --renderer sprite
 ```
 
 This installs the command into `~/.local/bin` and its art into `~/.local/share/fastfetch-star-lore`. Ensure `~/.local/bin` is on your `PATH`.
 
-To also start it automatically in new Zsh terminals:
+Choose `sprite` (the default) for full-color native Kitty images, or `raw` for portable plain ANSI art. To also start it automatically in new Zsh terminals:
 
 ```sh
-./install.sh --shell
+./install.sh --shell --renderer raw
 ```
 
-The installer adds a clearly marked block to `~/.zshrc` and will not add it twice.
+The renderer choice is stored in `~/.config/fastfetch-star-lore/config`; rerun the installer with the other choice to switch later. The installer adds a clearly marked block to `~/.zshrc` and will not add it twice.
 
 ## Use
 

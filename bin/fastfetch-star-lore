@@ -22,6 +22,18 @@ while [[ $# -gt 0 ]]; do
   esac
 done
 
+renderer_mode=${STAR_LORE_RENDERER:-}
+if [[ -z $renderer_mode ]]; then
+  settings_file="${XDG_CONFIG_HOME:-"$HOME/.config"}/fastfetch-star-lore/config"
+  if [[ -r $settings_file ]]; then
+    renderer_mode=$(awk -F= '$1 == "renderer" { print $2; exit }' "$settings_file")
+  fi
+fi
+case $renderer_mode in
+  ''|sprite|raw) ;;
+  *) printf 'Invalid configured renderer: %s\n' "$renderer_mode" >&2; exit 2 ;;
+esac
+
 script_path=$(readlink -f -- "${BASH_SOURCE[0]}")
 script_dir=$(cd -- "$(dirname -- "$script_path")" && pwd)
 art_dir=$(cd -- "$script_dir/../art" && pwd)
@@ -30,7 +42,7 @@ case $category in
   stargate)
     # Kitty can preserve the full-color pixel art; other terminals retain the
     # portable ANSI renderer.
-    if [[ "${TERM:-}" == xterm-kitty* && "${STAR_LORE_RENDERER:-sprite}" != raw ]]; then
+    if [[ "${TERM:-}" == xterm-kitty* && "${renderer_mode:-sprite}" == sprite ]]; then
       sprite=$(zsh "$art_dir/stargate/select-sprite.zsh")
       exec fastfetch "${config[@]}" --kitty "$sprite" --logo-width 38 --logo-height 18
     fi
