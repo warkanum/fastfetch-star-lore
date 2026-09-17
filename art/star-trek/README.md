@@ -1,3 +1,3 @@
 # Star Trek
 
-Reserved category for future Star Trek-inspired artwork.
+Colorful artifact-focused terminal art: communicator, tricorder, phaser, warp core, Borg cube, PADD, and bat'leth.

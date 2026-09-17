@@ -7,7 +7,7 @@ Colorful, lore-inspired ASCII artwork for [Fastfetch](https://github.com/fastfet
 | Category | Status | Contents |
 | --- | --- | --- |
 | `stargate` | Available | DHD, ZPM, Ancient control chair, Goa'uld hand device, staff weapon, Ancient repository, and Asgard emitter |
-| `star-trek` | Planned | Reserved for future artwork |
+| `star-trek` | Available | Communicator, tricorder, phaser, warp core, Borg cube, PADD, and bat'leth |
 | `star-wars` | Planned | Reserved for future artwork |
 
 ## Install
@@ -48,6 +48,12 @@ The art changes on each invocation. Preview or pin an individual Stargate artifa
 
 ```sh
 STARGATE_ART_INDEX=1 fastfetch-star-lore stargate
+```
+
+Star Trek uses the equivalent `STAR_TREK_ART_INDEX` variable:
+
+```sh
+STAR_TREK_ART_INDEX=3 fastfetch-star-lore star-trek
 ```
 
 ## Add a franchise

@@ -3,7 +3,7 @@ set -euo pipefail
 
 usage() {
   printf 'Usage: %s <category> [--config <fastfetch-config>]\n' "${0##*/}"
-  printf 'Available categories: stargate\n'
+  printf 'Available categories: stargate, star-trek\n'
 }
 
 category=${1:-stargate}
@@ -28,7 +28,8 @@ art_dir=$(cd -- "$script_dir/../art" && pwd)
 
 case $category in
   stargate) renderer="$art_dir/stargate/art.zsh" ;;
-  star-trek|star-wars)
+  star-trek) renderer="$art_dir/star-trek/art.zsh" ;;
+  star-wars)
     printf 'The %s category is reserved but has no art yet.\n' "$category" >&2
     exit 1
     ;;
