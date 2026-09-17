@@ -27,7 +27,15 @@ script_dir=$(cd -- "$(dirname -- "$script_path")" && pwd)
 art_dir=$(cd -- "$script_dir/../art" && pwd)
 
 case $category in
-  stargate) renderer="$art_dir/stargate/art.zsh" ;;
+  stargate)
+    # Kitty can preserve the full-color pixel art; other terminals retain the
+    # portable ANSI renderer.
+    if [[ "${TERM:-}" == xterm-kitty* && "${STAR_LORE_RENDERER:-sprite}" != raw ]]; then
+      sprite=$(zsh "$art_dir/stargate/select-sprite.zsh")
+      exec fastfetch "${config[@]}" --kitty "$sprite" --logo-width 38 --logo-height 18
+    fi
+    renderer="$art_dir/stargate/art.zsh"
+    ;;
   star-trek) renderer="$art_dir/star-trek/art.zsh" ;;
   star-wars)
     printf 'The %s category is reserved but has no art yet.\n' "$category" >&2

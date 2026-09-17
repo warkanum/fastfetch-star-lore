@@ -6,7 +6,7 @@ Colorful, lore-inspired ASCII artwork for [Fastfetch](https://github.com/fastfet
 
 | Category | Status | Contents |
 | --- | --- | --- |
-| `stargate` | Available | DHD, ZPM, Ancient control chair, Goa'uld hand device, staff weapon, Ancient repository, and Asgard emitter |
+| `stargate` | Available | Full-color Kitty sprites: DHD, ZPM, Goa'uld hand device, staff weapon, Ancient chair, and MALP |
 | `star-trek` | Available | Communicator, tricorder, phaser, warp core, Borg cube, PADD, and bat'leth |
 | `star-wars` | Planned | Reserved for future artwork |
 
@@ -44,11 +44,13 @@ By default Fastfetch uses its normal configuration. To use a specific Fastfetch 
 fastfetch-star-lore stargate --config ~/.config/fastfetch/config-pokemon.jsonc
 ```
 
-The art changes on each invocation. Preview or pin an individual Stargate artifact by setting `STARGATE_ART_INDEX` from `0` through `6`:
+In Kitty, Stargate uses native full-color pixel-art sprites and changes on each invocation. Pin one with `STARGATE_SPRITE_INDEX` from `1` through `6`:
 
 ```sh
-STARGATE_ART_INDEX=1 fastfetch-star-lore stargate
+STARGATE_SPRITE_INDEX=2 fastfetch-star-lore stargate
 ```
+
+In another terminal emulator, it falls back to ANSI art. Set `STAR_LORE_RENDERER=raw` to use that fallback in Kitty too.
 
 Star Trek uses the equivalent `STAR_TREK_ART_INDEX` variable:
 
