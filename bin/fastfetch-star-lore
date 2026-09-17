@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+usage() {
+  printf 'Usage: %s <category> [--config <fastfetch-config>]\n' "${0##*/}"
+  printf 'Available categories: stargate\n'
+}
+
+category=${1:-stargate}
+if [[ $# -gt 0 ]]; then shift; fi
+
+config=()
+while [[ $# -gt 0 ]]; do
+  case $1 in
+    --config|-c)
+      [[ $# -ge 2 ]] || { printf '%s requires a path\n' "$1" >&2; exit 2; }
+      config=(--config "$2")
+      shift 2
+      ;;
+    --help|-h) usage; exit 0 ;;
+    *) printf 'Unknown option: %s\n' "$1" >&2; usage >&2; exit 2 ;;
+  esac
+done
+
+script_path=$(readlink -f -- "${BASH_SOURCE[0]}")
+script_dir=$(cd -- "$(dirname -- "$script_path")" && pwd)
+art_dir=$(cd -- "$script_dir/../art" && pwd)
+
+case $category in
+  stargate) renderer="$art_dir/stargate/art.zsh" ;;
+  star-trek|star-wars)
+    printf 'The %s category is reserved but has no art yet.\n' "$category" >&2
+    exit 1
+    ;;
+  *) printf 'Unknown category: %s\n' "$category" >&2; usage >&2; exit 2 ;;
+esac
+
+zsh "$renderer" | fastfetch "${config[@]}" \
+  --logo-type file-raw --logo-height 11 --logo-width 28 --logo -
