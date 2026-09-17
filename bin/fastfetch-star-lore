@@ -51,14 +51,41 @@ case $category in
     # portable ANSI renderer.
     if [[ "${TERM:-}" == xterm-kitty* && "${renderer_mode:-sprite}" == sprite ]]; then
       sprite=$(zsh "$art_dir/stargate/select-sprite.zsh")
-      exec fastfetch "${config[@]}" --kitty "$sprite" --logo-width 38 --logo-height 18
+      case ${sprite##*/} in
+        active-stargate.png) quote='"Anything as powerful as the Stargate deserves respect."' ;;
+        dhd.png) quote='"This time there really are barbarians."' ;;
+        zpm.png) quote='"The most important thing in the universe."' ;;
+        hand-device.png) quote='"We have to try."' ;;
+        staff-weapon.png) quote='"Weapons are at maximum."' ;;
+        ancient-chair.png) quote='"The answer is in there."' ;;
+        malp.png) quote='"We can send objects through."' ;;
+        atlantis-city.png) quote='"If they come in ships, we will not be any match for them."' ;;
+        atlantis-gate.png) quote='"They really are at the gate."' ;;
+        puddle-jumper.png) quote='"Use your imagination."' ;;
+        universe-gate.png) quote='"The light is turned off."' ;;
+        destiny.png) quote='"I wish you all well."' ;;
+        alkesh.png) quote='"We must not let this fall into the hands of Anubis."' ;;
+      esac
+      fastfetch "${config[@]}" --kitty "$sprite" --logo-width 38 --logo-height 18
+      printf '\n%s\n' "$quote"
+      exit 0
     fi
     renderer="$art_dir/stargate/art.zsh"
     ;;
   star-trek)
     if [[ "${TERM:-}" == xterm-kitty* && "${renderer_mode:-sprite}" == sprite ]]; then
       sprite=$(zsh "$art_dir/star-trek/select-sprite.zsh")
-      exec fastfetch "${config[@]}" --kitty "$sprite" --logo-width 38 --logo-height 18
+      case ${sprite##*/} in
+        federation-starship.png) quote='"Risk is our business."' ;;
+        klingon-bird-of-prey.png) quote='"The future is what we make it."' ;;
+        vulcan-science-vessel.png) quote='"Logic is the beginning of wisdom, not the end."' ;;
+        tricorder-sprite.png) quote='"The needs of the many outweigh the needs of the few."' ;;
+        transporter.png) quote="\"I don't believe in the no-win scenario.\"" ;;
+        vulcan-salute.png) quote='"Live long and prosper."' ;;
+      esac
+      fastfetch "${config[@]}" --kitty "$sprite" --logo-width 38 --logo-height 18
+      printf '\n%s\n' "$quote"
+      exit 0
     fi
     renderer="$art_dir/star-trek/art.zsh"
     ;;

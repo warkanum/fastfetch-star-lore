@@ -46,7 +46,7 @@ if "$install_shell"; then
     cat >> "$zshrc" <<'EOF'
 
 # fastfetch-star-lore
-fastfetch-star-lore stargate --config "$HOME/.config/fastfetch/config-pokemon.jsonc"
+fastfetch-star-lore all --config "$HOME/.config/fastfetch/config-pokemon.jsonc"
 EOF
   fi
 fi

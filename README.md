@@ -41,9 +41,9 @@ All full-color pixel sprites are original AI-generated artwork, created with Ope
 
 | Category | Status | Contents |
 | --- | --- | --- |
-| `stargate` | Available | Full-color Kitty sprites: active Stargate, DHD, ZPM, Goa'uld hand device, staff weapon, Ancient chair, MALP, Atlantis City, Atlantis Gate, Puddle Jumper, Universe Gate, Destiny, and Al'kesh |
-| `star-trek` | Available | ANSI art: communicator, tricorder, phaser, warp core, Borg cube, PADD, and bat'leth. Kitty sprites: Federation-inspired starship, Klingon-inspired bird-of-prey, Vulcan science vessel, tricorder, transporter, and Vulcan salute |
-| `independence-day` | Available | Full-color Kitty sprites: city-scale mothership, alien interceptor, extraterrestrial ambassador, city beam, resistance interceptor, and signal beacon. ANSI art includes brief movie-quote references |
+| `stargate` | Available | Full-color Kitty sprites: active Stargate, DHD, ZPM, Goa'uld hand device, staff weapon, Ancient chair, MALP, Atlantis City, Atlantis Gate, Puddle Jumper, Universe Gate, Destiny, and Al'kesh; each with a brief terminal quote |
+| `star-trek` | Available | ANSI art: communicator, tricorder, phaser, warp core, Borg cube, PADD, and bat'leth. Kitty sprites: Federation-inspired starship, Klingon-inspired bird-of-prey, Vulcan science vessel, tricorder, transporter, and Vulcan salute; each with a brief terminal quote |
+| `independence-day` | Available | Full-color Kitty sprites: city-scale mothership, alien interceptor, extraterrestrial ambassador, city beam, resistance interceptor, and signal beacon; each with a brief terminal quote. ANSI art includes brief movie-quote references |
 | `star-wars` | Planned | Reserved for future artwork |
 
 ## Install
@@ -65,6 +65,24 @@ Choose `sprite` (the default) for full-color native Kitty images, or `raw` for p
 ```
 
 The renderer choice is stored in `~/.config/fastfetch-star-lore/config`; rerun the installer with the other choice to switch later. The installer adds a clearly marked block to `~/.zshrc` and will not add it twice.
+
+## Kitty sprites
+
+Run the command inside [Kitty](https://sw.kovidgoyal.net/kitty/) with the `sprite` renderer to display the native full-color images. Kitty normally sets `TERM` to `xterm-kitty`; confirm it with:
+
+```sh
+echo "$TERM"
+```
+
+Do not set `TERM=xterm-kitty` manually in another terminal emulator: Fastfetch needs a real Kitty graphics-protocol terminal to display the sprites. If `TERM` is `xterm-kitty` and the installed renderer is `sprite`, the command automatically chooses the Kitty sprite path.
+
+Verify the setup with a pinned sprite:
+
+```sh
+STARGATE_SPRITE_INDEX=1 fastfetch-star-lore stargate
+```
+
+Each Kitty sprite is followed by a short matching quote as normal terminal text. Set `STAR_LORE_RENDERER=raw` to use portable ANSI art even in Kitty.
 
 ## Use
 
