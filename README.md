@@ -8,30 +8,8 @@ These are the actual full-color Kitty sprite assets included in the package.
 
 <p align="center">
   <img src="art/stargate/images/active-stargate.png" alt="Active Stargate" width="31%" />
-  <img src="art/stargate/images/dhd.png" alt="Dial Home Device" width="31%" />
-  <img src="art/stargate/images/zpm.png" alt="Zero Point Module" width="31%" />
-</p>
-
-<p align="center">
-  <img src="art/stargate/images/hand-device.png" alt="Goa'uld hand device" width="31%" />
-  <img src="art/stargate/images/staff-weapon.png" alt="Jaffa staff weapon" width="31%" />
-  <img src="art/stargate/images/ancient-chair.png" alt="Ancient control chair" width="31%" />
-</p>
-
-<p align="center">
-  <img src="art/stargate/images/malp.png" alt="MALP exploration rover" width="31%" />
   <img src="art/stargate/images/atlantis-city.png" alt="Atlantis City" width="31%" />
-  <img src="art/stargate/images/atlantis-gate.png" alt="Atlantis Gate" width="31%" />
-</p>
-
-<p align="center">
   <img src="art/stargate/images/puddle-jumper.png" alt="Puddle Jumper" width="31%" />
-  <img src="art/stargate/images/universe-gate.png" alt="Universe Gate" width="31%" />
-  <img src="art/stargate/images/destiny.png" alt="Destiny" width="31%" />
-</p>
-
-<p align="center">
-  <img src="art/stargate/images/alkesh.png" alt="Goa'uld Al'kesh bomber" width="31%" />
 </p>
 
 The Stargate pixel sprites are original AI-generated artwork, created with OpenAI image generation and included as repository assets. They are lore-inspired designs, not converted show screenshots, promotional images, or copied artwork.
