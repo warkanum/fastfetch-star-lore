@@ -10,6 +10,12 @@ local -a sprites=(
   staff-weapon.png
   ancient-chair.png
   malp.png
+  atlantis-city.png
+  atlantis-gate.png
+  puddle-jumper.png
+  universe-gate.png
+  destiny.png
+  alkesh.png
 )
 
 local index=${STARGATE_SPRITE_INDEX:-$((RANDOM % ${#sprites[@]} + 1))}

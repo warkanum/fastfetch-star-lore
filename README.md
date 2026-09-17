@@ -20,6 +20,18 @@ These are the actual full-color Kitty sprite assets included in the package.
 
 <p align="center">
   <img src="art/stargate/images/malp.png" alt="MALP exploration rover" width="31%" />
+  <img src="art/stargate/images/atlantis-city.png" alt="Atlantis City" width="31%" />
+  <img src="art/stargate/images/atlantis-gate.png" alt="Atlantis Gate" width="31%" />
+</p>
+
+<p align="center">
+  <img src="art/stargate/images/puddle-jumper.png" alt="Puddle Jumper" width="31%" />
+  <img src="art/stargate/images/universe-gate.png" alt="Universe Gate" width="31%" />
+  <img src="art/stargate/images/destiny.png" alt="Destiny" width="31%" />
+</p>
+
+<p align="center">
+  <img src="art/stargate/images/alkesh.png" alt="Goa'uld Al'kesh bomber" width="31%" />
 </p>
 
 The Stargate pixel sprites are original AI-generated artwork, created with OpenAI image generation and included as repository assets. They are lore-inspired designs, not converted show screenshots, promotional images, or copied artwork.
@@ -28,7 +40,7 @@ The Stargate pixel sprites are original AI-generated artwork, created with OpenA
 
 | Category | Status | Contents |
 | --- | --- | --- |
-| `stargate` | Available | Full-color Kitty sprites: active Stargate, DHD, ZPM, Goa'uld hand device, staff weapon, Ancient chair, and MALP |
+| `stargate` | Available | Full-color Kitty sprites: active Stargate, DHD, ZPM, Goa'uld hand device, staff weapon, Ancient chair, MALP, Atlantis City, Atlantis Gate, Puddle Jumper, Universe Gate, Destiny, and Al'kesh |
 | `star-trek` | Available | Communicator, tricorder, phaser, warp core, Borg cube, PADD, and bat'leth |
 | `star-wars` | Planned | Reserved for future artwork |
 
@@ -66,7 +78,7 @@ By default Fastfetch uses its normal configuration. To use a specific Fastfetch 
 fastfetch-star-lore stargate --config ~/.config/fastfetch/config-pokemon.jsonc
 ```
 
-In Kitty, Stargate uses native full-color pixel-art sprites and changes on each invocation. Pin one with `STARGATE_SPRITE_INDEX` from `1` through `7` (the active Stargate is `1`):
+In Kitty, Stargate uses native full-color pixel-art sprites and changes on each invocation. Pin one with `STARGATE_SPRITE_INDEX` from `1` through `13` (the active Stargate is `1`):
 
 ```sh
 STARGATE_SPRITE_INDEX=2 fastfetch-star-lore stargate
